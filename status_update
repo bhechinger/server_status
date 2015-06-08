@@ -20,6 +20,7 @@ config.read(config_file)
 api_key = config.get('slack', 'api_key')
 bot_name = config.get('bot', 'name')
 bot_icon = config.get('bot', 'icon')
+status_file_name = config.get('bot', 'status_file')
 
 slack = Slacker(api_key)
 
@@ -33,10 +34,10 @@ else:
     status = 'False'
     status_msg = 'DOWN'
 
-with open ("status.txt", "r") as status_file:
+with open (status_file_name, "r") as status_file:
     data = status_file.readlines()[0].strip()
 
 if not data == status:
-    with open("status.txt", "w") as status_file:
+    with open(status_file_name, "w") as status_file:
         print(status, file = status_file)
     slack.chat.post_message('#aba', 'The servers are {status_msg}'.format(status_msg=status_msg), username=bot_name, icon_url=bot_icon)
