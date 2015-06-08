@@ -1,0 +1,10 @@
+[slack]
+# ABA
+#api_key = xoxp-3437644475-3445206594-4008616819-315f26
+
+# GU
+api_key = xoxp-3530359760-3530359762-3714554473-b65242
+
+[bot]
+name = PandaBot
+icon = http://aba.4amlunch.net/static/icons/animals-panda-bear-icone-5929-48.png
