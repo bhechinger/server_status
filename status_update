@@ -41,3 +41,4 @@ if not data == status:
     with open(status_file_name, "w") as status_file:
         print(status, file = status_file)
     slack.chat.post_message('#aba', 'The servers are {status_msg}'.format(status_msg=status_msg), username=bot_name, icon_url=bot_icon)
+    slack.chat.post_message('#server-status', 'The servers are {status_msg}'.format(status_msg=status_msg), username=bot_name, icon_url=bot_icon)
